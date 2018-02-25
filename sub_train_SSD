@@ -1,0 +1,9 @@
+#PBS -N SSD_deep_fasion -l nodes=40
+cd /home/u11697/caffe_test_fold/test_SSD
+source activate chainer_intel
+echo "training begin"
+mpirun -machinefile $PBS_NODEFILE -n 80 python train.py --image_label list_category_img_train.txt --bbox list_bbox_train.txt -TR /home/u11697/caffe_test_fold/test_image/fashion_data/Img/ -ilt list_category_img_test.txt --bbox_test list_bbox_test.txt
+echo "training end"
+
+%ls
+

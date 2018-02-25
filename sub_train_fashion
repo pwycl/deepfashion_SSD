@@ -1,0 +1,9 @@
+#PBS -N SSD_deep_fasion
+cd /home/u11697/caffe_test_fold/test_SSD
+source activate chainer_intel
+echo "training begin"
+python train_VOC.py
+echo "training end"
+
+%ls
+
